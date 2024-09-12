@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>מכין השבת</title>
+	<link rel="stylesheet" type="text/css" href="style.css" />
+	<meta charset="utf8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript" src="functions.js"></script>
+</head>
+<body dir="rtl">
+	<script type="text/javascript">
+		$(function (){
+			const familiesDetails = csvLoad("family.csv");
+			console.log (familiesDetails);
+		});
+	</script>
+	<h1>מכין השבת</h1>
+	<article id="content">
+		<section id="families">
+			<h2>הוסף את המשפחות הבאות לשבת</h2>
+			<div class="oneFamily" id="firstFamily">
+				<div class="familyName FN">משפחת לוי</div>
+				<div class="familyChildren FN">
+					<input type="radio" name="child0" value="all" checked /><label> כל המשפחה </label><br /><input type="radio" name="child0" value="some" /><label> חלק מהמשפחה</label>
+				</div>
+				<div class="meals FL">
+					<input type="checkbox" name="meal0" value="first" checked required /><label> סעודה ראשונה</label><br />
+					<input type="checkbox" name="meal0" value="second" checked required /><label> סעודה שניה</label><br />
+					<input type="checkbox" name="meal0" value="third" checked required /><label> סעודה שלישית</label><br />
+					<input type="checkbox" name="meal0" value="sleep" checked required /><label> לינה</label><br />
+				</div>
+			</div>
+			<div class="oneFamily">
+				<button class="less FN" onclick="removeFamily(this)">הסר</button>
+				<div class="familyNumber FN">1.</div>
+				<div class="familyChildren FN">
+					<input type="radio" name="child1" value="all" checked /><label> כל המשפחה </label><br /><input type="radio" name="child1" value="some" /><label> חלק מהמשפחה</label>
+				</div>
+				<div class="meals FN">
+					<input type="checkbox" name="meal1" value="first" checked /><label> סעודה ראשונה</label><br />
+					<input type="checkbox" name="meal1" value="second" checked /><label> סעודה שניה</label><br />
+					<input type="checkbox" name="meal1" value="third" checked /><label> סעודה שלישית</label><br />
+					<input type="checkbox" name="meal1" value="sleep" checked required /><label> לינה</label><br />
+				</div>
+			</div>
+			<button id="add" onclick="addFamily()">הוסף משפחה</button>
+			<button class="next" onclick="childrenDetails (this)">הבא</button>
+		</section>
+		<section id="details">
+			<h2>סיכום האנשים מהמשפחה שמגיעים</h2>
+			<div id="children">
+			</div>
+			<button class="previous" onclick="previous(this)">הקודם</button>
+			<button class="next" onclick="addMembers (this)">הבא</button>
+		</section>
+		<section id="special">
+			<h2>הוספת אורחים מיוחדים</h2>
+			<div class="oneMeal">
+				<h4>סעודה ראשונה</h4>
+				<label>בוגרים: </label><input type="number" name="firstMealAdults" value="0" required />
+				<label>ילדים מתחת גיל 3: </label><input type="number" name="firstMealChildren" value="0" required />
+			</div>
+			<div class="oneMeal">
+				<h4>סעודה שניה</h4>
+				<label>בוגרים: </label><input type="number" name="secondMealAdults" value="0" required />
+				<label>ילדים מתחת גיל 3: </label><input type="number" name="secondMealChildren" value="0" required />
+			</div>
+			<div class="oneMeal">
+				<h4>סעודה שלישית</h4>
+				<label>בוגרים: </label><input type="number" name="thirdMealAdults" value="0" required />
+				<label>ילדים מתחת גיל 3: </label><input type="number" name="thirdMealChildren" value="0" required />
+			</div>
+			<div class="oneMeal">
+				<h4>לינה</h4>
+				<label>בוגרים: </label><input type="number" name="sleepAdults" value="0" required />
+				<label>ילדים מתחת גיל 3: </label><input type="number" name="sleepChildren" value="0" required />
+			</div>
+			<button class="previous" onclick="previous(this)">הקודם</button>
+			<button class="next" onclick="calculate (this)">הבא</button>
+		</section>
+		<section id="answer">
+			<h1>סיכום</h1>
+			<div id="result">
+				<div class="field">סך כל האנשים הנמצאים בשבת: <span class="data">32</span></div>
+				<div class="field">מתוכם ילדים מתחת לגיל 3: <span class="data">20</span></div>
+				<div id="table">
+					<div class="header"></div>
+					<div class="header">בוגרים</div>
+					<div class="header">ילדים</div>
+					<div class="header">סה"כ</div>
+					<div class="header">סעודה ראשונה</div>
+					<div class="celldata">1</div>
+					<div class="celldata">2</div>
+					<div class="celldata">3</div>
+					<div class="header">סעודה שניה</div>
+					<div class="celldata">1</div>
+					<div class="celldata">2</div>
+					<div class="celldata">3</div>
+					<div class="header">סעודה שלישית</div>
+					<div class="celldata">1</div>
+					<div class="celldata">2</div>
+					<div class="celldata">3</div>
+					<div class="header">לינה</div>
+					<div class="celldata">1</div>
+					<div class="celldata">2</div>
+					<div class="celldata">3</div>
+				</div>
+			</div>
+			<button class="previous" onclick="previous(this)">הקודם</button>
+		</section>
+	</article>
+</body>
+</html>

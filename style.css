@@ -1,0 +1,116 @@
+* {
+	text-align: center;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "segoe ui";
+	font-size: 20px;
+}
+body {
+	width: 100%;
+}
+h1 {
+	font-size: 24px;
+	margin: 10px 10px;
+}
+article {
+	
+}
+section {
+	display: none;
+	padding-bottom: 50px;
+}
+section#families {
+	display: block;
+}
+h2 {
+	margin: 10px 10px;
+}
+#firstFamily .familyName , .invitedFamilyName {
+	width: 100%;
+	font-weight: bold;
+	background-color: #5599bb;
+}
+.oneFamily {
+	width: 100%;
+	border-bottom: 1px solid #5599bb;
+	overflow: auto;
+	margin-bottom: 10px;
+}
+.FN {
+	float: right;
+	height: 70px;
+}
+.FL {
+	float: left;
+	height: 70px;
+}
+.less {
+	width: 20%;
+	height: 30px;
+	border-radius: 20px;
+	background-color: red;
+}
+.familyNumber {
+	width: 10%;
+	height: 30px;
+}
+.familyName {
+	width: 69%;
+	height: 30px;
+	margin-left: 1%;
+}
+.familyChildren {
+	width: 50%;
+	margin-bottom: 50px;
+}
+.meals {
+	width: 50%;
+	margin-bottom: 50px;
+}
+.invitedFamily, .oneMeal {
+	margin-bottom: 10px;
+	background-color: #bbddff;
+}
+.invitedMeals, .field {
+	margin-bottom: 1px;
+	border-bottom: 1px solid #5599bb;
+}
+.familyMembers {
+	display: grid;
+	grid-template-columns: auto auto auto;
+	grid-template-rows: auto auto;
+}
+.oneMeal {
+	display: grid;
+	grid-template-columns: auto auto;
+	justify-content: space-around;
+	grid-column-gap: 10px;
+	grid-row-gap: 2px;
+}
+.oneMeal h4 {
+	grid-column: 1 / span 2;
+}
+.oneMeal input {
+	width: 100px;
+}
+#table {
+	display: grid;
+	grid-template-columns: auto auto auto auto;
+	margin: 20px 0px;
+	grid-gap: 5px;
+	background-color: #5599bb;
+	border-bottom: 5px solid #5599bb;
+	border-left: 5px solid #5599bb;
+}
+#table .header {
+	font-weight: bold;
+	font-size: 16px;
+}
+#table .celldata {
+	background-color: #bbddff;
+	font-size: 16px;
+}
+.data {
+	font-weight: bold;
+}
